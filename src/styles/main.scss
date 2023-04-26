@@ -2,6 +2,14 @@
 @use "mixins" as m;
 @use "view" as v;
 
+.feedback {
+  background-color: c.$blue;
+
+  & a {
+    text-decoration: underline;
+  }
+}
+
 .main {
   @include m.paddings($pt: 10em, $pb: 10em);
   background: url(../img/main/bg.png) no-repeat #fff;
@@ -69,8 +77,6 @@
     }
   }
 
- 
-
   &__notice {
     @include m.margins($mb: 2em, $mt: 1em);
     @include m.textOpt(1.1em, 1.1em, 700);
@@ -83,11 +89,15 @@
   }
 
   &__icons {
-    @include m.flexContainer($ai: center, $jc: space-around, $g: 2em, $fw: wrap);
+    @include m.flexContainer(
+      $ai: center,
+      $jc: space-around,
+      $g: 2em,
+      $fw: wrap
+    );
 
     & img {
       @include m.sizes($w: 100px);
-
     }
   }
 
@@ -112,7 +122,7 @@
       background: url(../img/modal_calc/check.png) center center no-repeat;
     }
   }
-  
+
   & .checkbox:checked + .checkbox-custom::before {
     content: "";
     display: block;
@@ -135,5 +145,4 @@
 
 .section {
   @include m.paddings($pt: 3em, $pb: 3em);
-
 }

@@ -41,7 +41,6 @@
       border-radius: 7px;
       @include m.paddings($pt: 4px, $pb: 4px, $pr: 4px, $pl: 4px);
       @include m.textOpt(4em, 1.6em, 700);
-
     }
   }
 }

@@ -4,7 +4,7 @@
   font-weight: $w;
 }
 
-@mixin sizes($w: initial, $h: initial) { 
+@mixin sizes($w: initial, $h: initial) {
   width: $w;
   height: $h;
 }

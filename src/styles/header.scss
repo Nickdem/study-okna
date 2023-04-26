@@ -73,7 +73,7 @@
 
 .section-title {
   @include m.textOpt(3em, 1.4em, 700);
-  @include m.margins( $mb: 2em);
+  @include m.margins($mb: 2em);
   @include m.paddings($pb: 2em);
   @include m.position($p: relative);
 

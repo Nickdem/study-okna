@@ -4,7 +4,7 @@
 
 .guarantees {
   background-color: c.$blue;
-  
+
   &__list {
     @include m.flexContainer(
       $jc: space-between,

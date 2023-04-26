@@ -108,7 +108,10 @@
             <img src="./img/header/phone.png" alt="#" />
             <b>+7 (495) 646-61-71</b>
           </a>
-          <a class="header__phone header__phone--link text-blue" href="#">
+          <a
+            class="header__phone header__phone--link text-blue phone-link"
+            href="#"
+          >
             Заказать обратный звонок
           </a>
         </div>
@@ -1884,16 +1887,18 @@
         </div>
       </div>
     </section>
-    <section class="feedback">
+    <section class="feedback section">
       <div class="wrapper feedback__inner center">
         <h3 class="text-white">
           Остались вопросы?
-          <a class="text-white" href="#">Спросите у нашего специалиста!</a>
+          <a class="text-white phone-link" href="#"
+            >Спросите у нашего специалиста!</a
+          >
         </h3>
       </div>
     </section>
     <!-- Footer -->
-    <footer class="footer " style="display: none">
+    <footer class="footer" style="display: none">
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-sm-push-8 col-xs-12">
@@ -1963,7 +1968,7 @@
         </div>
       </div>
     </div>
-    <div class="dialog">
+    <div class="dialog dialog__call">
       <div class="dialog__content">
         <button type="button" class="dialog__close uppercase">&times;</button>
         <form class="form main__form" action="#">
@@ -1998,7 +2003,7 @@
     </div>
 
     <!-- Request an engineer -->
-    <div class="dialog dialog_engineer">
+    <div class="dialog dialog__engineer">
       <div class="dialog__content">
         <button type="button" class="dialog__close uppercase">&times;</button>
 
@@ -2273,7 +2278,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-
+    <script src="./js/main.min.js"></script>
     <!-- Initialize modal, sliders -->
     <script>
       $(document).ready(function () {

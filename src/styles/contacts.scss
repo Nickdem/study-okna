@@ -3,7 +3,6 @@
 @use "view" as v;
 
 .contacts {
-
   & h3 {
     @include m.textOpt(1.5em, 2em, 700);
   }

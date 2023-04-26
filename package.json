@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
-    "prettier-write": "npx prettier --write .",
+    "prettier-write": "npx prettier --write ./src",
     "prettier-check": "npx prettier --check ./src",
     "eslint": "eslint ./src"
   },
