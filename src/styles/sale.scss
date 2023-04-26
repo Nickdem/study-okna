@@ -1,0 +1,47 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.sale {
+  background: url(../img/sale/bg.jpg) center center no-repeat #fff;
+
+  &__inner {
+    @include m.paddings($pt: 8em, $pb: 8em);
+    @include m.flexContainer($ai: center, $g: 3em);
+  }
+  &__info {
+    @include m.sizes($w: 440px);
+  }
+  &__title {
+    @include m.margins($mb: 1em);
+    @include m.textOpt(4.8em, 1em, 700);
+  }
+
+  &__subtitle {
+    @include m.margins($mb: 1em);
+    @include m.textOpt(2.4em, 1.6em, 400);
+  }
+
+  &__timer {
+    padding: 10px;
+    @include m.paddings($pt: 10px, $pb: 10px, $pr: 10px, $pl: 10px);
+    border: 1px solid grey;
+    background-color: c.$white;
+    color: c.$black;
+    border-radius: 10px;
+    @include m.sizes(360px, 150px);
+  }
+
+  &__time {
+    @include m.flexContainer($jc: center, $ai: center, $g: 1em);
+
+    & span {
+      background-color: c.$black;
+      color: c.$white;
+      border-radius: 7px;
+      @include m.paddings($pt: 4px, $pb: 4px, $pr: 4px, $pl: 4px);
+      @include m.textOpt(4em, 1.6em, 700);
+
+    }
+  }
+}

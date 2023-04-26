@@ -1,0 +1,23 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.dialog {
+  display: none;
+  @include m.position($p: fixed, $t: 0, $l: 0, $r: 0, $b: 0);
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__content {
+    @include m.position($p: fixed, $t: 10%, $l: 50%, $trX: true);
+  }
+
+  &__close {
+    @include m.position($p: absolute, $t: 20px, $r: 0, $trX: true);
+    @include m.textOpt(4em, 1em, 700);
+    color: c.$black;
+    border: none;
+    background: 0 0;
+    z-index: 10;
+  }
+}

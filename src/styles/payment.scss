@@ -1,0 +1,27 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.payment {
+  &__header {
+    @include m.textOpt(3em, 2.4em, 700);
+    @include m.margins($mb: 2em);
+  }
+
+  &__list {
+    @include m.flexContainer(
+      $jc: space-around,
+      $ai: center,
+      $fw: wrap,
+      $g: 1em
+    );
+  }
+
+  &__item {
+    @include m.flexContainer($ai: center, $g: 1em);
+
+    & p {
+      @include m.textOpt(2em, 2em, 400);
+    }
+  }
+}

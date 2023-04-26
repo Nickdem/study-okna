@@ -1,0 +1,100 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.header {
+  @include m.paddings($pt: 1rem, $pb: 1rem);
+
+  &__inner {
+    @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+  }
+
+  &__block {
+    @include m.flexContainer($ai: center, $g: 1em);
+
+    &--logo {
+      @include m.sizes($w: 535px, $h: min-content);
+    }
+
+    &--contacts {
+      @include m.flexContainer($ai: center, $g: 1em, $fd: column);
+    }
+  }
+
+  &__description {
+    @include m.textOpt(1.4em, 1.4em);
+  }
+
+  &__btn {
+    background: url(../img/header/edit.png) 1rem center no-repeat #fff;
+    @include m.paddings(1rem, 1rem, 1rem, 5rem);
+    border: 2px solid c.$green;
+    border-radius: 1rem;
+    @include m.textOpt(1.4em, 1.2em, 700);
+  }
+
+  &__logo {
+    @include m.sizes(142px, 42px);
+  }
+
+  &__time {
+    @include m.sizes(30px, 30px);
+  }
+
+  &__phone--number {
+    @include m.textOpt(2.3em, 1.2em, 700);
+    color: black;
+  }
+}
+
+.text-blue {
+  color: c.$blue;
+}
+
+.text-orange {
+  color: c.$orange;
+}
+
+.text-green {
+  color: c.$green;
+}
+
+.text-white {
+  color: c.$white;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
+}
+
+.section-title {
+  @include m.textOpt(3em, 1.4em, 700);
+  @include m.margins( $mb: 2em);
+  @include m.paddings($pb: 2em);
+  @include m.position($p: relative);
+
+  &::after {
+    content: "";
+    @include m.position($p: absolute, $b: 0, $l: 50%, $trX: true);
+    @include m.sizes(17rem, 0.2em);
+    background: url(../img/glazing/line.png) no-repeat;
+  }
+
+  &.text-white::after {
+    background: url(../img/guarantees/header_sub.png) no-repeat;
+  }
+}
+
+.wrapper {
+  max-width: 1320px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}

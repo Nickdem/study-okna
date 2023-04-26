@@ -1,0 +1,60 @@
+@mixin textOpt($s, $lh, $w: 400) {
+  font-size: $s;
+  line-height: $lh;
+  font-weight: $w;
+}
+
+@mixin sizes($w: initial, $h: initial) { 
+  width: $w;
+  height: $h;
+}
+
+@mixin paddings($pt: 0, $pr: 0, $pb: 0, $pl: 0) {
+  padding-top: $pt;
+  padding-right: $pr;
+  padding-bottom: $pb;
+  padding-left: $pl;
+}
+
+@mixin margins($mt: 0, $mr: 0, $mb: 0, $ml: 0) {
+  margin-top: $mt;
+  margin-right: $mr;
+  margin-bottom: $mb;
+  margin-left: $ml;
+}
+
+@mixin flexContainer(
+  $fd: row,
+  $jc: start,
+  $ai: stretch,
+  $g: normal,
+  $fw: nowrap
+) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $fw;
+  row-gap: $g;
+  column-gap: $g;
+}
+
+@mixin position(
+  $p: static,
+  $t: auto,
+  $r: auto,
+  $b: auto,
+  $l: auto,
+  $trX: false
+) {
+  position: $p;
+  top: $t;
+  right: $r;
+  left: $l;
+  bottom: $b;
+  transform: none;
+
+  @if ($trX) {
+    transform: translateX(-50%);
+  }
+}

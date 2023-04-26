@@ -1,0 +1,9 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.works {
+  &__gallery {
+    @include m.flexContainer($jc: center, $ai: center, $fw: wrap, $g: 1em);
+  }
+}

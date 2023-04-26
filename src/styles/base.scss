@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    text-shadow: 0 0 10px #000000;
+  }
+}
+
+button {
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 10px #000000;
+  }
+}
+ul,
+ol {
+  list-style: none;
+}
+
+.glazing .aluminum,
+.glazing .plastic,
+.glazing .french,
+.glazing .rise {
+  display: none;
+}
+
+.decoration .external,
+.decoration .rising,
+.decoration .roof {
+  display: none;
+}

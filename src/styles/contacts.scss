@@ -1,0 +1,14 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.contacts {
+
+  & h3 {
+    @include m.textOpt(1.5em, 2em, 700);
+  }
+
+  & p {
+    @include m.textOpt(1.8em, 2em, 700);
+  }
+}

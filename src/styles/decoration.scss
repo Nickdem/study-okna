@@ -1,0 +1,42 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.decoration {
+  background-color: #f7f7f7;
+
+  &__link {
+    display: block;
+    @include m.sizes($w: auto, $h: 8em);
+    @include m.paddings($pt: 2em, $pb: 2em);
+    @include m.textOpt(2em, 2em, 700);
+    color: c.$black;
+    text-transform: uppercase;
+
+    &--idle {
+      border-top: 1rem solid c.$grey;
+    }
+
+    &--active {
+      border-top: 1rem solid #0089cd;
+      background: linear-gradient(
+        180deg,
+        #ebebeb 0,
+        #ebebeb 0,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+
+  &__block {
+    @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+  }
+
+  &__materials {
+    @include m.flexContainer($ai: center, $jc: center, $g: 3em, $fw: wrap);
+
+    & h3 {
+      @include m.textOpt(1.4em, 1.4em, 700);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.guarantees {
+  background-color: c.$blue;
+  
+  &__list {
+    @include m.flexContainer(
+      $jc: space-between,
+      $ai: center,
+      $fw: wrap,
+      $g: 1em
+    );
+  }
+
+  &__block {
+    & p {
+      @include m.textOpt(1.8em, 1.4em, 700);
+      @include m.margins($mt: 3em, $mb: 8em);
+    }
+  }
+}

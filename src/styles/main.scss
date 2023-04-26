@@ -1,0 +1,139 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "view" as v;
+
+.main {
+  @include m.paddings($pt: 10em, $pb: 10em);
+  background: url(../img/main/bg.png) no-repeat #fff;
+
+  &__inner {
+    @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+  }
+
+  &__welcome {
+    @include m.sizes(50%);
+  }
+
+  &__subtitle {
+    @include m.textOpt(2.6em, 1.5em, 700);
+  }
+
+  &__title {
+    @include m.textOpt(5.5em, 1.5em, 700);
+  }
+
+  &__features {
+    @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+    @include m.margins($mt: 13em);
+  }
+
+  &__feature {
+    @include m.position($p: relative);
+
+    & p {
+      @include m.position($p: absolute, $t: 50%, $l: 50%, $trX: true);
+      @include m.textOpt(1.3em, 1.3em, 700);
+    }
+  }
+}
+
+.form {
+  @include m.sizes(425px);
+  @include m.margins($mt: 2em);
+  @include m.paddings($pt: 2em, $pl: 5em, $pb: 2em, $pr: 5em);
+  border-radius: 15px;
+  background-color: c.$white;
+  text-align: center;
+
+  &__subtitle {
+    @include m.textOpt(2em, 2em, 700);
+  }
+
+  &__title {
+    @include m.textOpt(2.4em, 2.4em, 700);
+    @include m.margins($mb: 1em);
+  }
+
+  &__field {
+    border-radius: 1rem;
+    background-color: c.$white;
+    color: c.$black;
+    border: 1px solid c.$grey;
+    @include m.sizes(100%, 5.8rem);
+    @include m.margins($mb: 2em);
+    @include m.paddings($pt: 0, $pl: 0, $pb: 0, $pr: 0);
+    @include m.textOpt(1em, 1.5em, 400);
+
+    &::placeholder {
+      @include m.textOpt(1.5em, 1.5em, 400);
+    }
+  }
+
+ 
+
+  &__notice {
+    @include m.margins($mb: 2em, $mt: 1em);
+    @include m.textOpt(1.1em, 1.1em, 700);
+    color: c.$grey;
+  }
+
+  &__select {
+    @include m.sizes(100%, 5.8rem);
+    @include m.textOpt(1.5em, 1.5em, 400);
+  }
+
+  &__icons {
+    @include m.flexContainer($ai: center, $jc: space-around, $g: 2em, $fw: wrap);
+
+    & img {
+      @include m.sizes($w: 100px);
+
+    }
+  }
+
+  & .checkbox {
+    display: none;
+  }
+
+  & .checkbox-custom {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    @include m.position($p: relative);
+    @include m.sizes(22px, 22px);
+    border: 2px solid #ccc;
+    border-radius: 3px;
+
+    &[id="warm"]::before {
+      content: "";
+      background: url(../img/modal_calc/check_warm.png) center center no-repeat;
+    }
+    &[id="cold"]::before {
+      background: url(../img/modal_calc/check.png) center center no-repeat;
+    }
+  }
+  
+  & .checkbox:checked + .checkbox-custom::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.button {
+  border: 1px solid #ffc600;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffed26 0, #ffb400 100%);
+  box-shadow: 1px 2px 20px 0 rgba(255, 153, 0, 0.4);
+  @include m.paddings($pt: 1.5em, $pl: 0, $pb: 1.5em, $pr: 0);
+  @include m.textOpt(1.7em, 1.5em, 700);
+}
+
+.section {
+  @include m.paddings($pt: 3em, $pb: 3em);
+
+}
