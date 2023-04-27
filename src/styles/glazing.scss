@@ -17,7 +17,7 @@
   }
 
   &__content {
-    @include m.flexContainer($ai: center, $jc: center);
+    @include m.flexContainer($jc: center);
     @include m.margins($mt: 4em);
 
     // & img {

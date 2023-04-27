@@ -46,7 +46,7 @@
 }
 
 .form {
-  @include m.sizes(425px);
+  @include m.sizes(504px);
   @include m.margins($mt: 2em);
   @include m.paddings($pt: 2em, $pl: 5em, $pb: 2em, $pr: 5em);
   border-radius: 15px;
@@ -94,16 +94,19 @@
   }
 
   &__icons {
-    @include m.flexContainer(
-      $ai: center,
-      $jc: space-around,
-      $g: 2em,
-      $fw: wrap
-    );
+    @include m.flexContainer($ai: center, $jc: center, $fw: wrap);
 
     & img {
       @include m.sizes($w: 100px);
     }
+  }
+
+  &__icon--active {
+    border-top: 1px solid c.$blue;
+  }
+
+  &__img img {
+    @include m.sizes($w: 100%);
   }
 
   & .checkbox {
@@ -144,7 +147,7 @@
   border-radius: 1rem;
   background: linear-gradient(180deg, #ffed26 0, #ffb400 100%);
   box-shadow: 1px 2px 20px 0 rgba(255, 153, 0, 0.4);
-  @include m.paddings($pt: 1.5em, $pl: 0, $pb: 1.5em, $pr: 0);
+  @include m.paddings($pt: 1.5em, $pl: 1em, $pb: 1.5em, $pr: 1em);
   @include m.textOpt(1.7em, 1.5em, 700);
 }
 

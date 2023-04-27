@@ -13,6 +13,11 @@ function modals() {
         if (e.target) {
           e.preventDefault();
         }
+        (
+          document.querySelectorAll(".dialog") as NodeListOf<HTMLDivElement>
+        ).forEach(function (item) {
+          item.style.display = "none";
+        });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
       });
@@ -23,12 +28,12 @@ function modals() {
       document.body.style.overflow = "";
     });
 
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "";
-      }
-    });
+    // modal.addEventListener("click", function (e) {
+    //   if (e.target === modal) {
+    //     modal.style.display = "none";
+    //     document.body.style.overflow = "";
+    //   }
+    // });
   }
 
   function showModalWithTimeout(modalSelector: string, time: number) {
@@ -45,6 +50,9 @@ function modals() {
     ".dialog__engineer .dialog__close"
   );
   bindModal(".phone-link", ".dialog__call", ".dialog__call .dialog__close");
+  bindModal(".glazing__price button", ".calc1", ".calc1 .dialog__close");
+  bindModal(".calc1 button", ".calc2", ".calc2 .dialog__close");
+  bindModal(".calc2 button", ".calc3", ".calc3 .dialog__close");
 
-  showModalWithTimeout(".dialog__call", 60000);
+  // showModalWithTimeout(".dialog__call", 60000);
 }

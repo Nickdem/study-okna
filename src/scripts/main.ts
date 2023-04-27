@@ -13,5 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
     "decoration__item--active"
   );
 
+  tabs(".form__icons", ".form__icon", ".form__img img", "form__icon--active");
+
   forms();
 });
