@@ -12,4 +12,6 @@ window.addEventListener("DOMContentLoaded", function () {
     ".decoration__block",
     "decoration__item--active"
   );
+
+  forms();
 });
