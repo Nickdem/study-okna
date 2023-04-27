@@ -12,6 +12,10 @@
     @include m.textOpt(1.8em, 1.4em, 700);
   }
 
+  &__block--active a {
+    text-decoration: underline;
+  }
+
   &__content {
     @include m.flexContainer($ai: center, $jc: center);
     @include m.margins($mt: 4em);

@@ -4,15 +4,7 @@
 
 .decoration {
   background-color: #f7f7f7;
-
-  &__link {
-    display: block;
-    @include m.sizes($w: auto, $h: 8em);
-    @include m.paddings($pt: 2em, $pb: 2em);
-    @include m.textOpt(2em, 2em, 700);
-    color: c.$black;
-    text-transform: uppercase;
-
+  &__item {
     &--idle {
       border-top: 1rem solid c.$grey;
     }
@@ -26,6 +18,14 @@
         rgba(255, 255, 255, 0) 100%
       );
     }
+  }
+  &__link {
+    display: block;
+    @include m.sizes($w: auto, $h: 8em);
+    @include m.paddings($pt: 2em, $pb: 2em);
+    @include m.textOpt(2em, 2em, 700);
+    color: c.$black;
+    text-transform: uppercase;
   }
 
   &__block {
