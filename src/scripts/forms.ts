@@ -1,4 +1,10 @@
-function forms() {
+type TypeForm = {
+  formValues: { [key: string]: string | number };
+  resetFormValues: () => void;
+  setFormValues: (key: string, value: string | number) => void;
+};
+
+function forms(formObj: TypeForm) {
   const formElms: NodeListOf<HTMLFormElement> =
       document.querySelectorAll(".base-form"),
     inputs: NodeListOf<HTMLInputElement> =
@@ -10,33 +16,23 @@ function forms() {
     error: "Что-то пошло не так...",
   };
 
-  document
-    .querySelectorAll(".base-form input[name = 'user_phone']")
-    .forEach(function (inp: HTMLInputElement) {
-      inp.addEventListener("input", function () {
-        inp.value = inp.value.replace(/\D/, "");
-      });
-    });
-
-  async function postData(data: { [key: string]: string }) {
+  async function postData() {
     (document.querySelector(".form__status") as HTMLSpanElement).innerText =
       message.load;
     return await delay(function () {
-      return data;
+      return formObj.formValues;
     });
   }
 
   function getValues(elms: HTMLFormControlsCollection) {
-    const formData: undefined | { [key: string]: string } = {};
+    // const formData: undefined | { [key: string]: string } = {};
     Array.from(elms).forEach(function (
       el: HTMLButtonElement | HTMLInputElement
     ) {
       if (el.tagName == "INPUT") {
-        formData[el.name] = el.value;
+        formObj.setFormValues(el.name, el.value);
       }
     });
-
-    return formData;
   }
 
   function resetInputs() {
@@ -53,9 +49,9 @@ function forms() {
       statusMessage.classList.add("form__status");
       item.appendChild(statusMessage);
 
-      const formData = getValues(item.elements);
+      getValues(item.elements);
 
-      postData(formData)
+      postData()
         .then(function (res) {
           console.log(res);
           statusMessage.innerText = message.success;
@@ -65,9 +61,18 @@ function forms() {
         })
         .finally(function () {
           resetInputs();
+          formObj.resetFormValues();
+
           delay(function () {
             statusMessage.remove();
           }, 5000);
+          if (item.parentElement.classList.contains("dialog__content")) {
+            (
+              item.parentElement.querySelector(
+                ".dialog__close"
+              ) as HTMLButtonElement
+            ).click();
+          }
         });
     });
   });

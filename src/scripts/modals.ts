@@ -1,4 +1,4 @@
-function modals() {
+function modals(resetValues: () => void) {
   function bindModal(
     triggerSelector: string,
     modalSelector: string,
@@ -26,14 +26,16 @@ function modals() {
     close.addEventListener("click", function () {
       modal.style.display = "none";
       document.body.style.overflow = "";
+      resetValues();
     });
 
-    // modal.addEventListener("click", function (e) {
-    //   if (e.target === modal) {
-    //     modal.style.display = "none";
-    //     document.body.style.overflow = "";
-    //   }
-    // });
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+        resetValues();
+      }
+    });
   }
 
   function showModalWithTimeout(modalSelector: string, time: number) {
@@ -51,8 +53,8 @@ function modals() {
   );
   bindModal(".phone-link", ".dialog__call", ".dialog__call .dialog__close");
   bindModal(".glazing__price button", ".calc1", ".calc1 .dialog__close");
-  bindModal(".calc1 button", ".calc2", ".calc2 .dialog__close");
-  bindModal(".calc2 button", ".calc3", ".calc3 .dialog__close");
+  bindModal(".popup_calc2", ".calc2", ".calc2 .dialog__close");
+  bindModal(".popup_calc3", ".calc3", ".calc3 .dialog__close");
 
   // showModalWithTimeout(".dialog__call", 60000);
 }
