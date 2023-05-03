@@ -3,7 +3,8 @@ function images() {
     imgPopup = document.createElement("div"),
     popcupContent = document.createElement("div"),
     closeBtn = document.createElement("button"),
-    imgEl = document.createElement("img");
+    imgEl = document.createElement("img"),
+    scrollWidth = getScrollWidth();
 
   imgPopup.classList.add("dialog");
   popcupContent.classList.add("dialog__content");
@@ -24,6 +25,7 @@ function images() {
     if ((target as HTMLImageElement).classList.contains("preview")) {
       imgPopup.style.display = "block";
       document.body.style.overflow = "hidden";
+      document.body.style.marginRight = scrollWidth + "px";
 
       const path = (target as HTMLImageElement).parentElement.getAttribute(
         "href"
@@ -35,5 +37,6 @@ function images() {
   closeBtn.addEventListener("click", function () {
     imgPopup.style.display = "none";
     document.body.style.overflow = "";
+    document.body.style.marginRight = 0 + "px";
   });
 }

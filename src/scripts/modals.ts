@@ -6,7 +6,8 @@ function modals(resetValues: () => void) {
   ) {
     const trigger = document.querySelectorAll(triggerSelector),
       modal: HTMLDivElement = document.querySelector(modalSelector),
-      close = document.querySelector(closeSelector);
+      close = document.querySelector(closeSelector),
+      scrollWidth = getScrollWidth();
 
     trigger.forEach(function (item) {
       item.addEventListener("click", function (e) {
@@ -20,12 +21,14 @@ function modals(resetValues: () => void) {
         });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
+        document.body.style.marginRight = scrollWidth + "px";
       });
     });
 
     close.addEventListener("click", function () {
       modal.style.display = "none";
       document.body.style.overflow = "";
+      document.body.style.marginRight = 0 + "px";
       resetValues();
     });
 
@@ -33,6 +36,7 @@ function modals(resetValues: () => void) {
       if (e.target === modal) {
         modal.style.display = "none";
         document.body.style.overflow = "";
+        document.body.style.marginRight = 0 + "px";
         resetValues();
       }
     });

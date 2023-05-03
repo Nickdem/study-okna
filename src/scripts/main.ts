@@ -26,5 +26,9 @@ window.addEventListener("DOMContentLoaded", function () {
   forms(formObj);
   timer(eventTime);
 
-  images()
+  images();
 });
+
+function getScrollWidth() {
+  return window.innerWidth - document.body.offsetWidth;
+}

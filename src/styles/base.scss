@@ -48,3 +48,17 @@ ol {
 .decoration .roof {
   display: none;
 }
+
+.faded {
+  animation: faded 0.5s ease-in;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
