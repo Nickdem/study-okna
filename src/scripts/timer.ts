@@ -1,8 +1,6 @@
 function timer(eventTime: number) {
   const elms = document.querySelectorAll(".timer-item");
   const t = setInterval(() => {
-    console.log(123);
-
     setTimerHTML();
   }, 1000);
 

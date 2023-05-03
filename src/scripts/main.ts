@@ -25,4 +25,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
   forms(formObj);
   timer(eventTime);
+
+  images()
 });
