@@ -20,4 +20,12 @@
     background: 0 0;
     z-index: 10;
   }
+
+  &__gallery {
+    @media (max-width: v.$tablet-width) {
+      & img {
+        width: 100%;
+      }
+    }
+  }
 }

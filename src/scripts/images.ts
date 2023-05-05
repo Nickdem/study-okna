@@ -6,7 +6,7 @@ function images() {
     imgEl = document.createElement("img"),
     scrollWidth = getScrollWidth();
 
-  imgPopup.classList.add("dialog");
+  imgPopup.classList.add("dialog", "dialog__gallery");
   popcupContent.classList.add("dialog__content");
   closeBtn.innerText = "×";
   closeBtn.classList.add("dialog__close", "uppercase");

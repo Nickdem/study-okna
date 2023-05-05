@@ -97,9 +97,9 @@
 
 .next {
   @include m.position($p: absolute, $t: 10px, $r: 20px);
-  z-index: 99;
+  z-index: 8;
 }
 .prev {
   @include m.position($p: absolute, $t: 10px, $l: 20px);
-  z-index: 99;
+  z-index: 8;
 }
