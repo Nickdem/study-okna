@@ -7,6 +7,15 @@
 
   &__inner {
     @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+
+    @media (max-width: v.$md-desktop-width) {
+      @include m.flexContainer(
+        $ai: center,
+        $jc: space-around,
+        $g: 1em,
+        $fw: wrap
+      );
+    }
   }
 
   &__block {
@@ -14,6 +23,11 @@
 
     &--logo {
       @include m.sizes($w: 535px, $h: min-content);
+
+      @media (max-width: v.$md-desktop-width) {
+        @include m.sizes($w: 100%);
+        @include m.flexContainer($fd: column, $ai: center, $g: 1em);
+      }
     }
 
     &--contacts {

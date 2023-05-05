@@ -30,6 +30,10 @@
 
   &__block {
     @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+
+    @media (max-width: v.$md-desktop-width) {
+      @include m.flexContainer($ai: center, $jc: center, $g: 1em, $fw: wrap);
+    }
   }
 
   &__materials {
@@ -37,6 +41,10 @@
 
     & h3 {
       @include m.textOpt(1.4em, 1.4em, 700);
+    }
+
+    @media (max-width: v.$md-desktop-width) {
+      @include m.sizes($w: 50%);
     }
   }
 }

@@ -2,7 +2,8 @@ function tabs(
   headerSelector: string,
   tabSelector: string,
   contentSelector: string,
-  activeClass: string
+  activeClass: string,
+  attr: string
 ) {
   const header = document.querySelector(headerSelector),
     tabs: NodeListOf<HTMLLinkElement> = document.querySelectorAll(tabSelector),
@@ -20,7 +21,13 @@ function tabs(
 
   function showContent(idx = 0) {
     content[idx].style.display = "flex";
-    tabs[idx].classList.add(activeClass);
+    tabs.forEach(function (item) {
+      if (+item.getAttribute(attr) == idx) {
+        console.log(idx);
+
+        item.classList.add(activeClass);
+      }
+    });
   }
   hideContent();
   showContent();
@@ -41,11 +48,13 @@ function tabs(
 
   header.addEventListener("click", function (e) {
     const target = getTargetItem(e.target as HTMLElement);
+
     if (target) {
-      tabs.forEach(function (item, i) {
+      tabs.forEach(function (item) {
         if (item == target) {
           hideContent();
-          showContent(i);
+          const n = (target as HTMLElement).getAttribute(attr);
+          showContent(+n);
         }
       });
     }

@@ -12,12 +12,19 @@
       $fw: wrap,
       $g: 1em
     );
+
+    @media (max-width: v.$sm-desktop-width) {
+      @include m.flexContainer($jc: center, $ai: center, $fw: wrap, $g: 2em);
+    }
   }
 
   &__block {
     & p {
       @include m.textOpt(1.8em, 1.4em, 700);
       @include m.margins($mt: 3em, $mb: 8em);
+      @media (max-width: v.$sm-desktop-width) {
+        @include m.margins($mt: 3em, $mb: 3em);
+      }
     }
   }
 }

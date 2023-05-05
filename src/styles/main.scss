@@ -14,25 +14,60 @@
   @include m.paddings($pt: 10em, $pb: 10em);
   background: url(../img/main/bg.png) no-repeat #fff;
 
+  @media (max-width: v.$md-desktop-width) {
+    background-size: cover;
+  }
+
   &__inner {
-    @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
+    @include m.flexContainer(
+      $ai: center,
+      $jc: space-between,
+      $g: 1em,
+      $fw: wrap
+    );
+
+    @media (max-width: v.$md-desktop-width) {
+      @include m.flexContainer($ai: center, $jc: center, $g: 1em, $fw: wrap);
+    }
   }
 
   &__welcome {
     @include m.sizes(50%);
+    @media (max-width: v.$md-desktop-width) {
+      text-align: center;
+    }
+
+    @media (max-width: v.$tablet-width) {
+      @include m.sizes();
+    }
   }
 
   &__subtitle {
     @include m.textOpt(2.6em, 1.5em, 700);
+    @media (max-width: v.$lg-tablet-width) {
+      @include m.textOpt(2em, 1.5em, 700);
+    }
   }
 
   &__title {
     @include m.textOpt(5.5em, 1.5em, 700);
+    @media (max-width: v.$lg-tablet-width) {
+      @include m.textOpt(3em, 1.5em, 700);
+    }
   }
 
   &__features {
     @include m.flexContainer($ai: center, $jc: space-between, $g: 1em);
     @include m.margins($mt: 13em);
+    @media (max-width: v.$md-desktop-width) {
+      @include m.margins($mt: 5em);
+    }
+
+    & img {
+      @media (max-width: v.$mobile-width) {
+        @include m.sizes(70px);
+      }
+    }
   }
 
   &__feature {
@@ -41,6 +76,10 @@
     & p {
       @include m.position($p: absolute, $t: 50%, $l: 50%, $trX: true);
       @include m.textOpt(1.3em, 1.3em, 700);
+
+      @media (max-width: v.$mobile-width) {
+        @include m.textOpt(1.1em, 1em, 700);
+      }
     }
   }
 }
@@ -52,14 +91,25 @@
   border-radius: 15px;
   background-color: c.$white;
   text-align: center;
+  @media (max-width: v.$mobile-width) {
+    @include m.sizes(320px);
+  }
 
   &__subtitle {
     @include m.textOpt(2em, 2em, 700);
+
+    @media (max-width: v.$mobile-width) {
+      @include m.textOpt(1.4em, 2em, 700);
+    }
   }
 
   &__title {
     @include m.textOpt(2.4em, 2.4em, 700);
     @include m.margins($mb: 1em);
+
+    @media (max-width: v.$mobile-width) {
+      @include m.textOpt(1.6em, 2em, 700);
+    }
   }
 
   &__field {
@@ -149,6 +199,11 @@
   box-shadow: 1px 2px 20px 0 rgba(255, 153, 0, 0.4);
   @include m.paddings($pt: 1.5em, $pl: 1em, $pb: 1.5em, $pr: 1em);
   @include m.textOpt(1.7em, 1.5em, 700);
+
+  @media (max-width: v.$mobile-width) {
+    @include m.paddings($pt: 1em, $pl: 0.6em, $pb: 1em, $pr: 0.6em);
+    @include m.textOpt(1.2em, 1em, 700);
+  }
 }
 
 .section {

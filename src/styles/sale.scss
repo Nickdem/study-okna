@@ -5,12 +5,24 @@
 .sale {
   background: url(../img/sale/bg.jpg) center center no-repeat #fff;
 
+  @media (max-width: v.$tablet-width) {
+    background-size: cover;
+  }
+
   &__inner {
     @include m.paddings($pt: 8em, $pb: 8em);
     @include m.flexContainer($ai: center, $g: 3em);
+
+    @media (max-width: v.$tablet-width) {
+      @include m.flexContainer($fd: column, $ai: center, $g: 2em);
+      text-align: center;
+    }
   }
   &__info {
     @include m.sizes($w: 440px);
+    @media (max-width: v.$mobile-width) {
+      @include m.sizes();
+    }
   }
   &__title {
     @include m.margins($mb: 1em);
@@ -30,6 +42,14 @@
     color: c.$black;
     border-radius: 10px;
     @include m.sizes(360px, 150px);
+    @media (max-width: v.$tablet-width) {
+      @include m.sizes($w: 100%);
+    }
+
+    @media (max-width: v.$mobile-width) {
+      @include m.sizes($w: 300px);
+      @include m.margins($mr: auto, $ml: auto);
+    }
   }
 
   &__time {

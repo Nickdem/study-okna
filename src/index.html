@@ -134,27 +134,43 @@
 
         <!-- Slider -->
         <div class="glazing__slider">
-          <div class="glazing__block center wow fadeInUp">
+          <div class="glazing__block center wow fadeInUp" data-num="0">
             <img src="./img/glazing/icons/1.png" alt="#" />
             <a class="tree_link text-blue">Деревянное <br />остекление</a>
           </div>
-          <div class="glazing__block center wow fadeInUp" data-wow-delay="0.1s">
+          <div
+            class="glazing__block center wow fadeInUp"
+            data-wow-delay="0.1s"
+            data-num="1"
+          >
             <img src="./img/glazing/icons/2.png" alt="#" />
             <a class="aluminum_link text-blue">Алюминиевое <br />остекление</a>
           </div>
-          <div class="glazing__block center wow fadeInUp" data-wow-delay="0.2s">
+          <div
+            class="glazing__block center wow fadeInUp"
+            data-wow-delay="0.2s"
+            data-num="2"
+          >
             <img src="./img/glazing/icons/3.png" alt="#" />
             <a class="plastic_link text-blue"
               >Остекление <br />пластиковыми <br />рамами</a
             >
           </div>
-          <div class="glazing__block center wow fadeInUp" data-wow-delay="0.3s">
+          <div
+            class="glazing__block center wow fadeInUp"
+            data-wow-delay="0.3s"
+            data-num="3"
+          >
             <img src="./img/glazing/icons/4.png" alt="#" />
             <a class="french_link text-blue"
               >Французское <br />остекление <br />(панорамное)</a
             >
           </div>
-          <div class="glazing__block center wow fadeInUp" data-wow-delay="0.4s">
+          <div
+            class="glazing__block center wow fadeInUp"
+            data-wow-delay="0.4s"
+            data-num="4"
+          >
             <img src="./img/glazing/icons/5.png" alt="#" />
             <a class="rise_link text-blue">Остекление <br />с выносом</a>
           </div>
@@ -354,23 +370,27 @@
         <div class="decoration__slider">
           <div
             class="decoration__item decoration__item--idle wow fadeInUp center"
+            data-count="0"
           >
             <a class="decoration__link"> Внутренняя отделка</a>
           </div>
           <div
             class="decoration__item decoration__item--idle wow fadeInUp center"
+            data-count="1"
             data-wow-delay="0.1s"
           >
             <a class="decoration__link"> Внешняя отделка </a>
           </div>
           <div
             class="decoration__item decoration__item--idle wow fadeInUp center"
+            data-count="2"
             data-wow-delay="0.2s"
           >
             <a class="decoration__link"> Выносное остекление </a>
           </div>
           <div
             class="decoration__item decoration__item--idle wow fadeInUp center"
+            data-count="3"
             data-wow-delay="0.3s"
           >
             <a class="decoration__link"> Крыша на балкон </a>
@@ -1047,49 +1067,6 @@
     <!-- Initialize modal, sliders -->
     <script>
       $(document).ready(function () {
-        $(".glazing_slider").slick({
-          infinite: true,
-          slidesToShow: 5,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1201,
-              settings: {
-                slidesToShow: 4,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1,
-              },
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 3,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2,
-              },
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2,
-              },
-            },
-            {
-              breakpoint: 530,
-              settings: {
-                slidesToShow: 1,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1,
-              },
-            },
-          ],
-        });
         $(".glazing__slider").slick({
           infinite: true,
           slidesToShow: 5,
@@ -1099,8 +1076,8 @@
               breakpoint: 1201,
               settings: {
                 slidesToShow: 4,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
                 slidesToScroll: 1,
               },
             },
@@ -1108,65 +1085,32 @@
               breakpoint: 992,
               settings: {
                 slidesToShow: 3,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2,
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
+                slidesToScroll: 1,
               },
             },
             {
               breakpoint: 768,
               settings: {
                 slidesToShow: 2,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2,
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
+                slidesToScroll: 1,
               },
             },
             {
               breakpoint: 530,
               settings: {
                 slidesToShow: 1,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
                 slidesToScroll: 1,
               },
             },
           ],
         });
-        $(".decoration_slider").slick({
-          infinite: true,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 3,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1,
-              },
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2,
-              },
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1,
-              },
-            },
-          ],
-        });
+
         $(".decoration__slider").slick({
           infinite: true,
           slidesToShow: 4,
@@ -1176,8 +1120,8 @@
               breakpoint: 1200,
               settings: {
                 slidesToShow: 3,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
                 slidesToScroll: 1,
               },
             },
@@ -1185,8 +1129,8 @@
               breakpoint: 992,
               settings: {
                 slidesToShow: 2,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
                 slidesToScroll: 2,
               },
             },
@@ -1194,8 +1138,8 @@
               breakpoint: 768,
               settings: {
                 slidesToShow: 1,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
+                prevArrow: '<button class="prev button"><</button>',
+                nextArrow: '<button class="next button">></button>',
                 slidesToScroll: 1,
               },
             },

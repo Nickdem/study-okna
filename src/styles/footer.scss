@@ -7,6 +7,11 @@
 
   &__inner {
     @include m.flexContainer($ai: center, $jc: space-around);
+
+    @media (max-width: v.$mobile-width) {
+      @include m.flexContainer($fd: column, $ai: center, $g: 3em);
+      text-align: center;
+    }
   }
 
   &__phone {

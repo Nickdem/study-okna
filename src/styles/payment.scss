@@ -15,6 +15,10 @@
       $fw: wrap,
       $g: 1em
     );
+
+    @media (max-width: v.$lg-tablet-width) {
+      @include m.flexContainer($fd: column, $g: 2em);
+    }
   }
 
   &__item {
@@ -22,6 +26,10 @@
 
     & p {
       @include m.textOpt(2em, 2em, 400);
+    }
+
+    @media (max-width: v.$lg-tablet-width) {
+      @include m.margins($ml: 20%);
     }
   }
 }

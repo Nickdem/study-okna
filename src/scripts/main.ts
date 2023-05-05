@@ -12,16 +12,24 @@ window.addEventListener("DOMContentLoaded", function () {
     ".glazing__slider ",
     ".glazing__block",
     ".glazing__content",
-    "glazing__block--active"
+    "glazing__block--active",
+    "data-num"
   );
   tabs(
     ".decoration__slider",
     ".decoration__item--idle",
     ".decoration__block",
-    "decoration__item--active"
+    "decoration__item--active",
+    "data-count"
   );
 
-  tabs(".form__icons", ".form__icon", ".form__img img", "form__icon--active");
+  tabs(
+    ".form__icons",
+    ".form__icon",
+    ".form__img img",
+    "form__icon--active",
+    "data-view"
+  );
 
   forms(formObj);
   timer(eventTime);
